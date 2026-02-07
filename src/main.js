@@ -5,6 +5,7 @@ const projects = {
     name: 'Haunted House',
     description: 'Une maison hantée avec fantômes, ombres et brouillard',
     image: './screen/haunted_house.png',
+    video: './screen/video/haunted_house.mp4',
     load: () => import('./projects/haunted-house.js'),
   },
 }
@@ -36,12 +37,27 @@ const buildMenu = () => {
     })
 
     card.innerHTML = `
-      ${project.image ? `<img src="${project.image}" alt="${project.name}" />` : ''}
+      <div class="project-card-media">
+        ${project.image ? `<img src="${project.image}" alt="${project.name}" />` : ''}
+        ${project.video ? `<video src="${project.video}" muted loop playsinline preload="none"></video>` : ''}
+      </div>
       <div class="project-card-content">
         <h2>${project.name}</h2>
         <p>${project.description}</p>
       </div>
     `
+
+    // Hover video play/pause
+    if (project.video) {
+      const video = card.querySelector('video')
+      card.addEventListener('mouseenter', () => {
+        video.currentTime = 0
+        video.play()
+      })
+      card.addEventListener('mouseleave', () => {
+        video.pause()
+      })
+    }
 
     projectList.appendChild(card)
   }
