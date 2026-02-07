@@ -5,4 +5,4 @@
         <p>${t.description}</p>
       </div>
     `,P.appendChild(o)}},j=()=>{m&&(m(),m=null)};async function w(s){j(),window.history.pushState({},"",`?project=${s}`),g.style.display="none",f.style.display="block",y.style.display="flex",m=(await p[s].load()).default(f)}function L(){j(),window.history.pushState({},"",window.location.pathname),g.style.display="flex",f.style.display="none",y.style.display="none"}y.addEventListener("click",L);window.addEventListener("popstate",()=>{const t=new URLSearchParams(window.location.search).get("project");t&&p[t]?w(t):L()});U();const B=new URLSearchParams(window.location.search),h=B.get("project");h&&p[h]?w(h):(g.style.display="flex",f.style.display="none",y.style.display="none");
-//# sourceMappingURL=index-ACNJWxVq.js.map
+//# sourceMappingURL=index-Cy3krku5.js.map
