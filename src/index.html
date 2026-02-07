@@ -1,13 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haunted House</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namazzu Portfolio - Three.js</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Main menu -->
+    <div id="menu">
+      <h1>Namazzu Portfolio - Three.js</h1>
+      <p class="subtitle">Mes exercices & projets</p>
+      <div id="project-list"></div>
+    </div>
+
+    <!-- Canvas Three.js (shared by all projects) -->
     <canvas class="webgl"></canvas>
-    <script type="module" src="./script.js"></script>
-</body>
+
+    <!-- Back button -->
+    <button id="back-button" aria-label="Retour au menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      Menu
+    </button>
+
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
