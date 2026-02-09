@@ -8,6 +8,18 @@ const projects = {
     video: './screen/video/haunted_house.mp4',
     load: () => import('./projects/haunted-house.js'),
   },
+  particles: {
+    name: 'Particles',
+    description: 'Expérimentations avec des systèmes de particules',
+    image: './screen/particles.png',
+    video: './screen/video/particles.mp4',
+    load: () => import('./projects/particles.js'),
+  },
+  'galaxy-generator': {
+    name: 'Galaxy Generator',
+    description: 'Un générateur de galaxies avec des particules',
+    load: () => import('./projects/galaxy-generator.js'),
+  },
 }
 
 // DOM elements
