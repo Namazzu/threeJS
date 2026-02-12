@@ -237,6 +237,7 @@ export default function galaxyGenerator(canvas) {
       window.cancelAnimationFrame(animationFrameId)
     }
     window.removeEventListener('resize', onResize)
+    gui.destroy()
     renderer.dispose()
     scene.traverse((child) => {
       if (child.isMesh) {
