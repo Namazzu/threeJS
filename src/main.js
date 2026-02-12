@@ -18,6 +18,8 @@ const projects = {
   'galaxy-generator': {
     name: 'Galaxy Generator',
     description: 'Un générateur de galaxies avec des particules',
+    image: './screen/galaxy.png',
+    video: './screen/video/galaxy.mp4',
     load: () => import('./projects/galaxy-generator.js'),
   },
 }
