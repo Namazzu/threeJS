@@ -6,12 +6,12 @@
 
 html,
 body {
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-x: hidden;
+  overflow-y: auto; */
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, sans-serif;
-  background: #0a0a0a;
+  background: #1e1a20;
   color: #e0e0e0;
   height: 100%;
 }
@@ -26,6 +26,35 @@ body {
   left: 0;
   outline: none;
   display: none;
+}
+
+/* ========================
+   Project HTML container
+   ======================== */
+
+#project-html {
+  display: none;
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#project-html .section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  font-family: 'Cabin', sans-serif;
+  color: #ffeded;
+  text-transform: uppercase;
+  font-size: 6vmin;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#project-html .section:nth-child(odd) {
+  justify-content: flex-end;
 }
 
 /* ========================

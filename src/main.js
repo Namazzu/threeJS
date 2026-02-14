@@ -22,6 +22,13 @@ const projects = {
     video: './screen/video/galaxy.mp4',
     load: () => import('./projects/galaxy-generator.js'),
   },
+  'scroll-animation': {
+    name: 'Scroll Animation',
+    description: 'Animation synchronisée au scroll en webgl',
+    image: './screen/scroll_animation.png',
+    video: './screen/video/scroll_animation.mp4',
+    load: () => import('./projects/scroll-animation.js'),
+  },
 }
 
 // DOM elements
@@ -64,13 +71,15 @@ const buildMenu = () => {
     // Hover video play/pause (desktop)
     if (project.video) {
       const video = card.querySelector('video')
-      card.addEventListener('mouseenter', () => {
-        video.currentTime = 0
-        video.play()
-      })
-      card.addEventListener('mouseleave', () => {
-        video.pause()
-      })
+      if (video) {
+        card.addEventListener('mouseenter', () => {
+          video.currentTime = 0
+          video.play().catch(() => {})
+        })
+        card.addEventListener('mouseleave', () => {
+          video.pause()
+        })
+      }
     }
 
     projectList.appendChild(card)
@@ -138,7 +147,8 @@ function setupScrollVisibility() {
       const cardRect = card.getBoundingClientRect()
       const overlap = Math.max(
         0,
-        Math.min(cardRect.right, listRect.right) - Math.max(cardRect.left, listRect.left),
+        Math.min(cardRect.right, listRect.right) -
+          Math.max(cardRect.left, listRect.left),
       )
       visibilityMap.set(card, overlap / cardRect.width)
     })
