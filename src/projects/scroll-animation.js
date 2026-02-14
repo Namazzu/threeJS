@@ -127,10 +127,23 @@ export default function scrollAnimation(canvas) {
     height: window.innerHeight,
   }
 
+  const updateMeshLayout = () => {
+    const isMobile = sizes.width < 768
+    const positionsX = isMobile ? [0, 0, 0] : [-2, 2, -2]
+    const scale = isMobile ? 0.5 : 1
+    sectionMeshes.forEach((mesh, i) => {
+      mesh.position.x = positionsX[i]
+      mesh.scale.setScalar(scale)
+    })
+  }
+
   const onResize = () => {
     // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
+
+    // Update mesh layout (position + scale for mobile column view)
+    updateMeshLayout()
 
     // Update camera
     camera.aspect = sizes.width / sizes.height
@@ -140,6 +153,8 @@ export default function scrollAnimation(canvas) {
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   }
+
+  updateMeshLayout()
 
   window.addEventListener('resize', onResize)
 

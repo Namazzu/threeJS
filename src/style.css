@@ -57,6 +57,26 @@ body {
   justify-content: flex-end;
 }
 
+@media (max-width: 768px) {
+  #project-html .section:first-child {
+    padding-top: 8%;
+  }
+  #project-html .section {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 15%;
+  }
+
+  #project-html .section:first-child {
+    padding-top: 25%;
+  }
+
+  #project-html .section:nth-child(odd) {
+    justify-content: flex-start;
+  }
+}
+
 /* ========================
    Main menu
    ======================== */
